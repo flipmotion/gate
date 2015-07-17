@@ -1,0 +1,68 @@
+.footer {
+	&-lvl-1 {
+		color: #fff;
+		padding: 30px 0;
+		background: #7e838e;
+	}
+	.logo {
+		h3 {
+			font-size:40px;
+			font-family: MyriadProBold;
+			margin: 0;
+		}
+	}
+	.my-table {
+		display: table;
+		margin: 0 auto;
+		padding-top: 10px;
+		p {
+			margin: 0;
+		}
+		a {
+			text-decoration: underline;
+			margin-bottom: 5px;
+			&:hover,&:focus {
+				text-decoration: none;
+			}
+			display: inline-block;
+			position: relative;
+			color: #fff;
+			&:after {
+				content: '';
+				width: 20px;
+				height: 20px;
+				background: url(../img/email.png) center top no-repeat;
+				position: absolute;
+				left: -30px;
+				top: 5px;
+			}
+		}
+	}
+	.call  a {
+		color: #fff;
+		text-decoration: underline;
+		font-size: 18px;
+		&:hover,&:focus {
+			text-decoration: none;
+		}
+	}
+	.phone {
+		padding-top: 3px;
+		font-size: 25px;
+		font-weight: 700;
+		margin-bottom: 0;
+		span {
+			display: inline-block;
+			position: relative;
+			&:after {
+				content: '';
+				width: 16px;
+				height: 16px;
+				background: url(../img/phone-2.png) center center no-repeat;
+				position: absolute;
+				left: -25px;
+				top: 10px;
+			}
+		}
+	}
+}
