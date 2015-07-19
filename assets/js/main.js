@@ -1,10 +1,15 @@
 $(document).ready(function() {
-	$("body").scrollspy({target: "#menu", offset:50});
-	$('a.smooth').click(function(){
-		$('html, body').animate({
-			scrollTop: $( $.attr(this, 'href') ).offset().top -50}, 1000);
-		return false;
-	});
+	send();
+	function send(){
+		var form = $('[data-form="send"]');
+		form.ajaxForm(function() {
+			$('#call3').modal('hide');
+			$('#call2').modal('hide');
+			$('#call').modal('hide');
+			$('#thx').modal('show');
+			$(form).resetForm();
+		});
+	}
 	var form = $('[data-form="send"]');
 	$(form).validator().on('submit', function (e) {
 		if ($(this).hasClass('disabled')) {
@@ -15,6 +20,13 @@ $(document).ready(function() {
 			send();
 		}
 	});
+	$("body").scrollspy({target: "#menu", offset:50});
+	$('a.smooth').click(function(){
+		$('html, body').animate({
+			scrollTop: $( $.attr(this, 'href') ).offset().top -50}, 1000);
+		return false;
+	});
+	
 	var scroll_r = $(this).scrollTop();
 	menuTop();
 	$(window).scroll(function () {
@@ -54,17 +66,11 @@ $(document).ready(function() {
 			});
 		myMap.geoObjects.add(myPlacemark);
 	}
+	
+	
 });
 
 
-function send(){
-	var form = $('[data-form="send"]');
-	form.ajaxForm(function() {
-		$('#call').modal('hide');
-		$('#thx').modal('show');
-		$(form).resetForm();
-	});
-}
 
 
 function menuTop() {
